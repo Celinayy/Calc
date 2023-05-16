@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="sudoku.js"></script>
+</head>
+<style>
+    table {
+        display: table;
+        border: 2px solid #444;
+        border-collapse: collapse;
+        position: relative;
+    }
+
+    table tr {
+        display: table-row;
+        position: relative;
+        z-index: -1;
+    }
+
+    table td {
+        display: table-cell;
+        padding: 8px;
+        border: 1px solid #ff0000;
+        text-align: center;
+    }
+
+    table td:nth-child(3),
+    table td:nth-child(6) {
+        border-right: 5px solid #555;
+    }
+
+    /*vertical*/
+    table tr:nth-child(3) td,
+    table tr:nth-child(6) td {
+        border-bottom: 5px solid #555;
+    }
+
+    /*horizontal*/
+</style>
+
+<body>
+<a href="index.html"><button id="backFromSudoku" class="btn btn-danger text-center m-2">Back to Calc!</button></a>
+<button onClick="history.go(0);" id="refreshPage" class="btn btn-success">Refresh!</button>
+</body>
+
+</html>
