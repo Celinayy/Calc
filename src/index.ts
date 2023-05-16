@@ -11,7 +11,7 @@ const wrongNumber = document.querySelector<HTMLDivElement>("#wrongNumber")
 const rightNumber = document.querySelector<HTMLDivElement>("#rightNumber")
 const mainDiv = document.querySelector<HTMLDivElement>("#mainDiv")
 const sudokuText = document.querySelector<HTMLDivElement>("#sudokuText")
-
+const amoebaText = document.querySelector<HTMLDivElement>("#amoebaText")
 
 
 function warningText() {
@@ -85,11 +85,12 @@ secondBtn?.addEventListener("click", e => {
 })
 
 firstBtn?.addEventListener("click", e => {
-  if (firstBtn == null || sudokuText == null) return
+  if (firstBtn == null || sudokuText == null ||amoebaText == null) return
   if (secRow && firstRow) {
     secRow.style.display = "none"
     firstRow.style.display = "block"
     sudokuText.innerText = ""
+    amoebaText.innerText = ""
   }
 })
 
@@ -145,11 +146,24 @@ function goToSudoku() {
   }
 }
 
-// átirányít a "sudoku.html" oldalra
-console.log(validatorText)
+function goToAmoeba() {
+  if (secText?.value == "amoeba" || secText?.value == "Amoeba") {
+    const amoebaBtn = document.createElement('button')
+    amoebaBtn.id = "amBtn"
+    amoebaText?.appendChild(amoebaBtn)
+    amoebaBtn.className = "btn btn-primary text-white pt-2"
+    amoebaBtn.innerText = "Go to Amoeba!"
+
+  }
+}
+
+
+// átirányít a "sudoku.html" oldalra VAGY átirányít a "amoeba.html" oldalra
 validatorText?.addEventListener("click", e => {
-  if(sudokuText == null) return
+  if(sudokuText == null || amoebaText == null) return
   sudokuText.innerText = ""
+  amoebaText.innerText = ""
   goToSudoku()
+  goToAmoeba()
 })
 

@@ -12,8 +12,9 @@
 </head>
 <style>
     table {
+        margin: auto;
         display: table;
-        border: 2px solid #444;
+        border: 3px solid green;
         border-collapse: collapse;
         position: relative;
     }
@@ -33,21 +34,23 @@
 
     table td:nth-child(3),
     table td:nth-child(6) {
-        border-right: 5px solid #555;
+        border-right: 5px solid green;
     }
 
     /*vertical*/
     table tr:nth-child(3) td,
     table tr:nth-child(6) td {
-        border-bottom: 5px solid #555;
+        border-bottom: 5px solid green;
     }
 
     /*horizontal*/
 </style>
 
 <body>
-<a href="index.html"><button id="backFromSudoku" class="btn btn-danger text-center m-2">Back to Calc!</button></a>
-<button onClick="history.go(0);" id="refreshPage" class="btn btn-success">Refresh!</button>
+    <div class="text-center mt-2">
+        <a href="index.html"><button id="backFromSudoku" class="btn btn-danger text-center">Back</button></a>
+        <button onClick="history.go(0);" id="refreshPage" class="btn btn-success">Refresh</button>
+    </div>
 </body>
 
 </html>
